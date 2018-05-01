@@ -12,15 +12,18 @@ public class Trimmer extends JPanel{
  
  
  public Trimmer (){
- JPanel pane = new JPanel();
- JRadioButton on = JRadioButton(String sOn, boolean selected);
- JRadioButton off = JRadioButton(String sOff, boolean selected);
- add(pane);
+ 	JPanel pane = new JPanel();
+ 	JRadioButton on = JRadioButton(String sOn, boolean selected);
+	 JRadioButton off = JRadioButton(String sOff, boolean selected);
+	 pane.add(on);
+	 pane.add(off);
+ 	add(pane);
+ }
  
  	public void startTrim() {
 		Thread startThread = new Thread() {
 			public void run() {
-				while (true) {
+				while (on) {
 					trimAttempt();
 					try {
 						Thread.sleep(1000/refreshRate);
@@ -56,7 +59,7 @@ private void trimAttempt(){
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sb, null); 
       } 
     }catch (Exception e) {
-     
+     // maybe put an output here?
    } 
  }
 
