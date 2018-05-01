@@ -6,7 +6,7 @@ import java.awt.BorderLayout;
 import javax.swing.*;
 
 public class Trimmer extends JPanel{
- int refreshRate = 15;
+ int refreshRate = 10;
  String sOn = "Turn on"
  String sOff = "Turn off"
  
