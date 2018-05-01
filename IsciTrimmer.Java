@@ -8,7 +8,6 @@ public class IsciTrimmer {
         Trimmer trimmer = new Trimmer();
 		 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			         public void run() {
-			        
 				 JFrame frame = new JFrame ("ISCI Trimmer");
 				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				 frame.getContentPane().add(trimmer, BorderLayout.CENTER);
