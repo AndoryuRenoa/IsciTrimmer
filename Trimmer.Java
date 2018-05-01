@@ -7,18 +7,34 @@ import javax.swing.*;
 
 public class Trimmer extends JPanel{
  int refreshRate = 10;
- String sOn = "Turn on"
- String sOff = "Turn off"
+ boolean isOn = true;
  
  
  public Trimmer (){
  	JPanel pane = new JPanel();
- 	JRadioButton on = JRadioButton(String sOn, boolean selected);
-	 JRadioButton off = JRadioButton(String sOff, boolean selected);
+ 	JRadioButton on = JRadioButton("On");
+	 on.setActionCommand("on");
+	 JRadioButton off = JRadioButton("Off");
+	 off.setActionCommand("off");
+	 on.addActionListener();
+	 off.addActionListener();
 	 pane.add(on);
 	 pane.add(off);
  	add(pane);
  }
+	
+public void actionPerformed(ActionEvent e) {
+    if ("on".equals(e.getActionCommand())) {
+        isOn = true;
+	on.setEnabled(true);
+	off.setEnabled(false);
+    } else {
+        isOn = false;
+	on.setEnabled(false);
+	off.setEnabled(true);
+    }
+} 
+	
  
  	public void startTrim() {
 		Thread startThread = new Thread() {
