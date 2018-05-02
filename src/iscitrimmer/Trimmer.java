@@ -88,6 +88,7 @@ private void trimAttempt(){
                 s= s.replace(".","");
                 s= s.replace(",","");
 		//^ s=s.replace("*","");
+		//^ s=s.replace(";","");
 	        StringSelection ss = new StringSelection(s);
 	        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null); 
         } 
