@@ -70,7 +70,8 @@ public void actionPerformed(ActionEvent e) {
 private void trimAttempt(){
      Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
         try { if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) { 
-	        String text = (String)t.getTransferData(DataFlavor.stringFlavor); 
+	        String text = (String)t.getTransferData(DataFlavor.stringFlavor);
+		//^ could include additional if statement if(text.length()<x) { to put a limit on what this will process
 	        text=text.toUpperCase(); 
 	        String s = text;
 	        s= s.replace(" ","");
