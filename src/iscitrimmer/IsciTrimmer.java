@@ -21,7 +21,7 @@ public class IsciTrimmer {
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.getContentPane().add(trimmer, BorderLayout.CENTER);
                     frame.setVisible(true);
-		    //^ could set perferred horizontal size to 245 px
+		    //^ frame.setPreferredSize(new Dimension(250, 75));
                     frame.pack();
 					 
 			  }
