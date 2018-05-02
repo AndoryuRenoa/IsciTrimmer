@@ -21,6 +21,9 @@ public class Trimmer extends JPanel implements ActionListener{
 	on.setActionCommand("on");
 	off = new JButton("Off");
 	off.setActionCommand("off");
+	 
+	//on.setEnabled(false); <-- cleans up the launch look
+        //off.setEnabled(true);
         
 	on.addActionListener(this);
 	off.addActionListener(this);
