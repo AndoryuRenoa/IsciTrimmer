@@ -1,5 +1,5 @@
 /*
- * first build complete in under 3 hours.
+ * first build complete in under 2 hours.
  */
 package iscitrimmer;
 
