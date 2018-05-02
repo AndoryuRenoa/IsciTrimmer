@@ -17,6 +17,7 @@ public class Trimmer extends JPanel implements ActionListener{
  public Trimmer (){
  	JPanel pane = new JPanel();
  	on = new JButton("on");
+	//^ for continuity should be on = new JButton("On");
 	on.setActionCommand("on");
 	off = new JButton("Off");
 	off.setActionCommand("off");
