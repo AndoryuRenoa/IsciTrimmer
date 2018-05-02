@@ -22,6 +22,7 @@ public class IsciTrimmer {
                     frame.getContentPane().add(trimmer, BorderLayout.CENTER);
                     frame.setVisible(true);
 		    //^ frame.setPreferredSize(new Dimension(250, 75));
+		    //^ frame.setAlwaysOnTop(true); ?
                     frame.pack();
 					 
 			  }
