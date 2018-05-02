@@ -70,6 +70,7 @@ private void trimAttempt(){
 	        text=text.toUpperCase(); 
 	        String s = text;
 	        s= s.replace(" ","");
+		//^should be s=s.replace("//s","");
 	        s= s.replace("-","");
 	        s= s.replace("(","");
 	        s= s.replace(")","");
