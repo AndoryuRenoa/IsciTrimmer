@@ -55,27 +55,27 @@ public void actionPerformed(ActionEvent e) {
 
 
 private void trimAttempt(){
-    Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
-     try { 
-      if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) { 
-        String text = (String)t.getTransferData(DataFlavor.stringFlavor); 
-        text=text.toUpperCase(); 
-        StringBuffer sb = new StringBuffer(text);
-        sb.replace(" ","");
-        sb.replace("-","");
-        sb.replace("(","");
-        sb.replace(")","");
-        sb.replace("_","");
-        sb.replace("[","");
-        sb.replace("]","");
-        sb.replace("{","");
-        sb.replace("}","");
-        sb.replace("/","");
-        sb.replace("\","");
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sb, null); 
-      } 
-    }catch (Exception e) {
-     // maybe put an output here?
-   } 
+     Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
+        try { if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) { 
+	        String text = (String)t.getTransferData(DataFlavor.stringFlavor); 
+	        text=text.toUpperCase(); 
+	        String s = text;
+	        s= s.replace(" ","");
+	        s= s.replace("-","");
+	        s= s.replace("(","");
+	        s= s.replace(")","");
+	        s= s.replace("_","");
+	        s= s.replace("[","");
+	        s= s.replace("]","");
+	        s= s.replace("{","");
+	        s= s.replace("}","");
+	        s= s.replace("/","");
+                s= s.replace(".","");
+	        StringSelection ss = new StringSelection(s);
+	        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null); 
+        } 
+        } catch (Exception e) { 
+        } 
  }
+}
 
