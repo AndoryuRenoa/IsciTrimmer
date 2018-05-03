@@ -1,15 +1,9 @@
-/*
- * first build complete in under 2 hours.
- */
+
 package iscitrimmer;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
-/**
- *
- * @author andrew
- */
 public class IsciTrimmer {
 
 
