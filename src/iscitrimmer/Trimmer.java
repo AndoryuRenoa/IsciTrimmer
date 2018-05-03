@@ -58,6 +58,7 @@ public void actionPerformed(ActionEvent e) {
 						Thread.sleep(1000/refreshRate);
 					}catch (InterruptedException e) {
 						System.out.println("An error occured in startTrim");
+						//^ change to popup window?
 					}
 				}
 			
@@ -93,7 +94,8 @@ private void trimAttempt(){
 	        StringSelection ss = new StringSelection(s);
 	        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null); 
         } 
-        } catch (Exception e) { 
+        } catch (Exception e) {
+		// popup window displaying "Failure in string manipulation"?
         } 
  }
 
