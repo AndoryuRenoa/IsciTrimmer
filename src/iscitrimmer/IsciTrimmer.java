@@ -2,6 +2,7 @@
 package iscitrimmer;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import javax.swing.JFrame;
 
 public class IsciTrimmer {
@@ -15,8 +16,8 @@ public class IsciTrimmer {
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.getContentPane().add(trimmer, BorderLayout.CENTER);
                     frame.setVisible(true);
-		    //^ frame.setPreferredSize(new Dimension(250, 75));
-		    //^ frame.setAlwaysOnTop(true); ?
+		    frame.setPreferredSize(new Dimension(250, 75));
+		    frame.setAlwaysOnTop(true); 
                     frame.pack();
 					 
 			  }
