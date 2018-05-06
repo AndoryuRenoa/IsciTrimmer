@@ -16,14 +16,13 @@ public class Trimmer extends JPanel implements ActionListener{
  
  public Trimmer (){
  	JPanel pane = new JPanel();
- 	on = new JButton("on");
-	//^ for continuity should be on = new JButton("On");
+ 	on = new JButton("On");
 	on.setActionCommand("on");
 	off = new JButton("Off");
 	off.setActionCommand("off");
 	 
-	//on.setEnabled(false); <-- cleans up the launch look
-        //off.setEnabled(true);
+	on.setEnabled(false); 
+        off.setEnabled(true);
         
 	on.addActionListener(this);
 	off.addActionListener(this);
@@ -72,29 +71,30 @@ private void trimAttempt(){
      Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
         try { if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) { 
 	        String text = (String)t.getTransferData(DataFlavor.stringFlavor);
-		//^ could include additional if statement if(text.length()<x) { to put a limit on what this will process
-	        text=text.toUpperCase(); 
-	        String s = text;
-	        s= s.replace(" ","");
-		//^should be s=s.replace("//s","");
-	        s= s.replace("-","");
-	        s= s.replace("(","");
-	        s= s.replace(")","");
-	        s= s.replace("_","");
-	        s= s.replace("[","");
-	        s= s.replace("]","");
-	        s= s.replace("{","");
-	        s= s.replace("}","");
-	        s= s.replace("/","");
-                s= s.replace(".","");
-                s= s.replace(",","");
-		//^ s=s.replace("*","");
-		//^ s=s.replace(";","");
-		//^ s=s.replace(":","");
-	        StringSelection ss = new StringSelection(s);
-	        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null); 
-        } 
-        } catch (Exception e) {
+                    if(text.length()<25) { 
+                       text=text.toUpperCase(); 
+                        String s = text;
+                        s= s.replace("//s","");
+        	        s= s.replace("-","");
+                        s= s.replace("(","");
+                        s= s.replace(")","");
+        	        s= s.replace("_","");
+                        s= s.replace("[","");
+                        s= s.replace("]","");
+        	        s= s.replace("{","");
+                        s= s.replace("}","");
+                        s= s.replace("/","");
+                        s= s.replace(".","");
+                        s= s.replace(",","");
+        		s=s.replace("*","");
+                	s=s.replace(";","");
+                	s=s.replace(":","");
+                        StringSelection ss = new StringSelection(s);
+                        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+                    }
+                } 
+            } catch (Exception e) {
+                System.out.println("Problem occured in trimAttempt");
 		// popup window displaying "Failure in string manipulation"?
         } 
  }
