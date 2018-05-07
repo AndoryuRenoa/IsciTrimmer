@@ -79,6 +79,7 @@ private void trimAttempt(){
                        text=text.toUpperCase(); 
                         String s = text;
                         s= s.replace("//s","");
+			//^ does not remove whitespace, needs to be replaced
         	        s= s.replace("-","");
                         s= s.replace("(","");
                         s= s.replace(")","");
