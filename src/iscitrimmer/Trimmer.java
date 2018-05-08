@@ -58,10 +58,6 @@ public void actionPerformed(ActionEvent e) {
 					}catch (InterruptedException e) {
 						System.out.println("An error occured in startTrim");
 						//^ change to popup window?
-						// resetThread()
-						// ^ in this method turn everything to off have it wait for 3/10s of a second
-						// giving this thread time to stop running while loop
-						// then turn everything on again
 					}
 				}
 			
@@ -78,9 +74,8 @@ private void trimAttempt(){
                     if(text.length()<25) { 
                        text=text.toUpperCase(); 
                         String s = text;
-                        s= s.replace("//s","");
-			//^ does not remove whitespace, needs to be replaced:
-			// s=s.replace("\\s","");
+                        s= s.replace(" ","");
+                        s= s.replace("  ","");
         	        s= s.replace("-","");
                         s= s.replace("(","");
                         s= s.replace(")","");
