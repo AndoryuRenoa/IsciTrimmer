@@ -69,8 +69,9 @@ public void actionPerformed(ActionEvent e) {
 
 private void trimAttempt(){
      Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
-        try { if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) { 
+        try { if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) {
 	        String text = (String)t.getTransferData(DataFlavor.stringFlavor);
+		// V limits attempt to trim to only when copying less than 25 characters
                     if(text.length()<25) { 
                        text=text.toUpperCase(); 
                         String s = text;
@@ -90,6 +91,7 @@ private void trimAttempt(){
         		s=s.replace("*","");
                 	s=s.replace(";","");
                 	s=s.replace(":","");
+			    //^ need to remove ":" so trigger iscis will work
                         StringSelection ss = new StringSelection(s);
                         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
                     }
