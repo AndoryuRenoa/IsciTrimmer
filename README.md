@@ -8,6 +8,8 @@ V1.1 Complete
 
 Current Build Notes:
 
+For some reason //s does not actually call whitespace when used in this code. Research what is happening here
+
 For easy of use no popup dialog appear indicating where failure occures if one happens. Code still uses System.out.println().
 
 Trimmer is currently limited to 25 characters prior to trimming, or no attempt is made to trim it.
