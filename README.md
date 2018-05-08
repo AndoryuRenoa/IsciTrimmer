@@ -8,7 +8,7 @@ V1.1 Complete
 
 Current Build Notes:
 
-**Currently does not work with Trigger iscis ":" cannot be stripped**
+**Currently does not work with Trigger iscis due to ":" currently being stripped**
 
 For some reason //s does not actually call whitespace when used in this code. Research what is happening here
 
