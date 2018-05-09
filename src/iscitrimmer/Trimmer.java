@@ -12,6 +12,7 @@ public class Trimmer extends JPanel implements ActionListener{
  int refreshRate = 10;
  boolean isOn = true;
  JButton on, off;
+ // boolean restart = false;
  
  
  public Trimmer (){
@@ -57,7 +58,9 @@ public void actionPerformed(ActionEvent e) {
 						Thread.sleep(1000/refreshRate);
 					}catch (InterruptedException e) {
 						System.out.println("An error occured in startTrim");
-						//^ change to popup window?
+						//maybe something like:
+						// restart = on;
+						// restartThread();
 					}
 				}
 			
@@ -101,5 +104,10 @@ private void trimAttempt(){
 		// popup window displaying "Failure in string manipulation"?
         } 
  }
-
+/*
+* private void restartThread(){
+*  thread restart = newthread { etc...
+*  sleep first then call other thread
+*  }
+*} 
 }
