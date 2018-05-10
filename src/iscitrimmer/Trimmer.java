@@ -12,7 +12,6 @@ public class Trimmer extends JPanel implements ActionListener{
  int refreshRate = 10;
  boolean isOn = true;
  JButton on, off;
- // boolean restart = false;
  
  
  public Trimmer (){
