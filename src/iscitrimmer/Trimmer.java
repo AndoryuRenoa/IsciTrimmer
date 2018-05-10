@@ -53,6 +53,7 @@ public void actionPerformed(ActionEvent e) {
 		Thread startThread = new Thread() {
 			public void run() {
 				while (isOn) {
+					//perhaps the solution (XRDS problem) is simply to move the trimAttempt to after the .sleep
 					trimAttempt();
 					try {
 						Thread.sleep(1000/refreshRate);
@@ -71,6 +72,7 @@ public void actionPerformed(ActionEvent e) {
 
 
 private void trimAttempt(){
+	//V could the xrds problem be caused by both this and xrds grabbing this resource at the same time?
      Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
         try { if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) {
 	        String text = (String)t.getTransferData(DataFlavor.stringFlavor);
