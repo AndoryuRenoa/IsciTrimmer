@@ -72,6 +72,7 @@ public void actionPerformed(ActionEvent e) {
 
 private void trimAttempt(){
 	//V could the xrds problem be caused by both this and xrds grabbing this resource at the same time?
+	//V perhaps even better would be to move the Transferable to inside the try statement
      Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
         try { if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) {
 	        String text = (String)t.getTransferData(DataFlavor.stringFlavor);
