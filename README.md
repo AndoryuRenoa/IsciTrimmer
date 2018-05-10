@@ -8,7 +8,7 @@ V1.1 Complete
 
 Current Build Notes:
 
-Copying from certain software(XRDS) causes the software to hang and the iscitrimmer to stop functioning although the UI does not fail.
+Copying from certain software(XRDS) causes said software to hang and the clipboard to be unusable until IsciTrimmer is closed, although the IsciTrimmer UI does not fail. (Possible Deadlock?)
 
 **Currently does not work with Trigger iscis due to ":" currently being stripped**
 
