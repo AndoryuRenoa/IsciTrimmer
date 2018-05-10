@@ -8,6 +8,8 @@ V1.1 Complete
 
 Current Build Notes:
 
+Copying from certain software(XRDS) causes the software to hang and the iscitrimmer to stop functioning although the UI does not fail.
+
 **Currently does not work with Trigger iscis due to ":" currently being stripped**
 
 For some reason //s does not actually call whitespace when used in this code. Research what is happening here
