@@ -13,7 +13,6 @@ public class Trimmer extends JPanel implements ActionListener{
  boolean isOn = true;
  JButton on, off;
  
- 
  public Trimmer (){
  	JPanel pane = new JPanel();
  	on = new JButton("On");
@@ -71,10 +70,9 @@ public void actionPerformed(ActionEvent e) {
 
 
 private void trimAttempt(){
-	//V remove line below, try this as a solution first.
-     Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
-        try { 
-	// Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
+    
+        try {    
+        Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
 		if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) {
 	          String text = (String)t.getTransferData(DataFlavor.stringFlavor);
 		// V limits attempt to trim to only when copying less than 25 characters
@@ -96,8 +94,7 @@ private void trimAttempt(){
                         s= s.replace(",","");
         		s=s.replace("*","");
                 	s=s.replace(";","");
-                	s=s.replace(":","");
-			    //^ need to remove ":" so trigger iscis will work
+
                         StringSelection ss = new StringSelection(s);
                         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
                     }
@@ -107,6 +104,7 @@ private void trimAttempt(){
 		// popup window displaying "Failure in string manipulation"?
         } 
  }
+}
 /*
 * private void restartThread(){
 *  thread restart = newthread { etc...
@@ -114,3 +112,4 @@ private void trimAttempt(){
 *  }
 *} 
 }
+*/
