@@ -10,7 +10,11 @@ Current Build notes:
 
 Test on Monday to see if moving the try statement takes care of the xrds problem
 
-New build does not fix xrds issue. New version of xrds seems to have issue with pasting now while isci trimmer is running. Simple short term solution is to change from thread to button. Moving transferable inside of try statement does not solve issue. 
+New build does not fix xrds issue. New version of xrds seems to have issue with pasting now while isci trimmer is running. 
+
+Simple short term solution is to change from thread to button. 
+
+Moving transferable inside of try statement does not solve issue. 
 
 
 Previous Build Notes:
