@@ -25,7 +25,8 @@ public class Trimmer extends JPanel implements ActionListener{
 	off.setActionCommand("off");
 	 // trim = new JButton("Trim");
 	 // trim.setActionCommand("trim");
-	 
+	
+	 //flip the two below for now so it starts in off position
 	on.setEnabled(false); 
         off.setEnabled(true);
         
