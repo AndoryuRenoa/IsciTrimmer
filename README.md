@@ -4,11 +4,13 @@ Java App that manipulates OS's clipboard. Removes spaces/dashes/periods etc and 
 
 This is for copying and pasting ISCIs from multiple sources and formats into a unified output. 
 
-V1.11 Complete
+**V1.11 Complete**
 
 Current Build notes:
 
 Test on Monday to see if moving the try statement takes care of the xrds problem
+
+New build does not fix xrds issue. New version of xrds seems to have issue with pasting now while isci trimmer is running. Simple short term solution is to change from thread to button. Moving transferable inside of try statement does not solve issue. 
 
 
 Previous Build Notes:
