@@ -1,5 +1,9 @@
 package iscitrimmer;
 
+//next solution: add button for one time trim
+// lower refresRate to 7
+// move trimAttempt until after sleep statement
+
 import java.awt.Toolkit; 
 import java.awt.datatransfer.DataFlavor; 
 import java.awt.datatransfer.StringSelection; 
@@ -70,7 +74,7 @@ public void actionPerformed(ActionEvent e) {
 
 
 private void trimAttempt(){
-    
+    // can move Transferable initailization back to above try statement 
         try {    
         Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
 		if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) {
