@@ -15,7 +15,7 @@ import javax.swing.*;
 public class Trimmer extends JPanel implements ActionListener{
  int refreshRate = 10;
  boolean isOn = true;
- JButton on, off;
+ JButton on, off; //trim;
  
  public Trimmer (){
  	JPanel pane = new JPanel();
@@ -23,12 +23,15 @@ public class Trimmer extends JPanel implements ActionListener{
 	on.setActionCommand("on");
 	off = new JButton("Off");
 	off.setActionCommand("off");
+	 // trim = new JButton("Trim");
+	 // trim.setActionCommand("trim");
 	 
 	on.setEnabled(false); 
         off.setEnabled(true);
         
 	on.addActionListener(this);
 	off.addActionListener(this);
+	 //trim.addActionListener(this);
         
 	pane.add(on);
 	pane.add(off);
@@ -47,6 +50,8 @@ public void actionPerformed(ActionEvent e) {
 	on.setEnabled(true);
         off.setEnabled(false);
         startTrim();
+	    // ^ change above to else if("off".equals(e.getActionCommand())){
+	    // create new else { trimAttempt();}
     }
 } 
 	
