@@ -4,6 +4,7 @@ package iscitrimmer;
 // lower refresRate to 7
 // move trimAttempt until after sleep statement
 
+import java.awt.BorderLayout;
 import java.awt.Toolkit; 
 import java.awt.datatransfer.DataFlavor; 
 import java.awt.datatransfer.StringSelection; 
@@ -14,29 +15,34 @@ import javax.swing.*;
 
 public class Trimmer extends JPanel implements ActionListener{
  int refreshRate = 10;
- boolean isOn = true;
- JButton on, off; //trim;
+ // changing below to false until determining problem with xrds
+ boolean isOn = false;
+ JButton on, off, trim;
  
  public Trimmer (){
  	JPanel pane = new JPanel();
+        JPanel bottom = new JPanel();
  	on = new JButton("On");
 	on.setActionCommand("on");
 	off = new JButton("Off");
 	off.setActionCommand("off");
-	 // trim = new JButton("Trim");
-	 // trim.setActionCommand("trim");
+	 trim = new JButton("Trim");
+	 trim.setActionCommand("trim");
 	
 	 //flip the two below for now so it starts in off position
-	on.setEnabled(false); 
-        off.setEnabled(true);
+	on.setEnabled(true); 
+        off.setEnabled(false);
         
 	on.addActionListener(this);
 	off.addActionListener(this);
-	 //trim.addActionListener(this);
+	trim.addActionListener(this);
         
 	pane.add(on);
 	pane.add(off);
- 	add(pane);
+        bottom.add(trim);
+        this.setLayout(new BorderLayout());
+ 	add(pane, BorderLayout.NORTH);
+        add(bottom, BorderLayout.SOUTH);
         startTrim();
  }
 	
@@ -46,13 +52,13 @@ public void actionPerformed(ActionEvent e) {
 	on.setEnabled(false);
         off.setEnabled(true);
         startTrim();
-    } else {
+    } else if ("off".equals(e.getActionCommand())) {
         isOn = false;
 	on.setEnabled(true);
         off.setEnabled(false);
         startTrim();
-	    // ^ change above to else if("off".equals(e.getActionCommand())){
-	    // create new else { trimAttempt();}
+    }else { 
+        trimAttempt();
     }
 } 
 	

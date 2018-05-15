@@ -14,9 +14,9 @@ public class IsciTrimmer {
                     public void run() {
                     JFrame frame = new JFrame ("ISCI Trimmer");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.getContentPane().add(trimmer, BorderLayout.CENTER);
+                    frame.getContentPane().add(trimmer);
                     frame.setVisible(true);
-		    frame.setPreferredSize(new Dimension(300, 100));
+		    frame.setPreferredSize(new Dimension(300, 110));
 		    frame.setAlwaysOnTop(true); 
                     frame.pack();
 					 
