@@ -40,7 +40,7 @@ Exception in thread "Thread-24" java.lang.IllegalStateException: cannot open sys
 	at iscitrimmer.Trimmer.access$000(Trimmer.java:11)
 	at iscitrimmer.Trimmer$1.run(Trimmer.java:55)
   
-Solution would be to have thread helper that reinstates thread if this exception occurs. This is likely a problem with the awt clipboard API
+Solution would be to have thread helper that reinstates thread if this exception occurs. 
 
 
 Previous Build (1.0) Notes:
