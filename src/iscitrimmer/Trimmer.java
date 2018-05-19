@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Trimmer extends JPanel implements ActionListener{
- int refreshRate = 10;
+ int refreshRate = 3;
  // changing below to false until determining problem with xrds
  boolean isOn = false;
  JButton on, off, trim;
@@ -68,7 +68,6 @@ public void actionPerformed(ActionEvent e) {
 			public void run() {
 				while (isOn) {
 					//perhaps the solution (XRDS problem) is simply to move the trimAttempt to after the .sleep
-					trimAttempt();
 					try {
 						Thread.sleep(1000/refreshRate);
 					}catch (InterruptedException e) {
@@ -77,6 +76,7 @@ public void actionPerformed(ActionEvent e) {
 						// restart = on;
 						// restartThread();
 					}
+					trimAttempt();
 				}
 			
 			}
