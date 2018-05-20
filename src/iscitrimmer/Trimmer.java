@@ -1,7 +1,7 @@
 package iscitrimmer;
 
 //next solution: add button for one time trim
-// lower refresRate to 7
+// lower refresRate to 3
 // move trimAttempt until after sleep statement
 
 import java.awt.BorderLayout;
