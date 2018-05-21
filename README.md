@@ -4,9 +4,14 @@ Java App that manipulates OS's clipboard. Removes spaces/dashes/periods etc and 
 
 This is for copying and pasting ISCIs from multiple sources and formats into a unified output. 
 
-**V1.111 Complete**
+**V1.112 Complete**
 
 Current Build Notes:
+
+Despite lowering refresh rate to 3x per second, and making sure the process runs after refreshing, there is still a high likelyhood of xrds interfering with pasting. Using the trim feature is the way to go for now.
+
+
+Previous Build Notes:
 
 Keep off and use trim button as work around until solution is built for xrds clipboard issue.
 
