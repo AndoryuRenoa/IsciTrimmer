@@ -2,7 +2,9 @@
 
 Java App that manipulates OS's clipboard. Removes spaces/dashes/periods etc and makes all characters uppercase
 
-This is for copying and pasting ISCIs from multiple sources and formats into a unified output. 
+This is for copying and pasting ISCIs from multiple sources and formats into a unified output.
+
+Moving threaded version to archive folder for now, updating to use button based function only. 
 
 **V1.112 Complete**
 
