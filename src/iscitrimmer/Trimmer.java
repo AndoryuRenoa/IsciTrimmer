@@ -1,8 +1,6 @@
 package iscitrimmer;
 
-//next solution: add button for one time trim
-// lower refresRate to 3
-// move trimAttempt until after sleep statement
+//stripping out the threading, so it's just a button.
 
 import java.awt.BorderLayout;
 import java.awt.Toolkit; 
@@ -14,75 +12,29 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Trimmer extends JPanel implements ActionListener{
- int refreshRate = 3;
  // changing below to false until determining problem with xrds
- boolean isOn = false;
- JButton on, off, trim;
+ JButton trim;
  
  public Trimmer (){
  	JPanel pane = new JPanel();
-        JPanel bottom = new JPanel();
- 	on = new JButton("On");
-	on.setActionCommand("on");
-	off = new JButton("Off");
-	off.setActionCommand("off");
-	 trim = new JButton("Trim");
+         trim = new JButton("Trim");
 	 trim.setActionCommand("trim");
 	
 	 //flip the two below for now so it starts in off position
-	on.setEnabled(true); 
-        off.setEnabled(false);
-        
-	on.addActionListener(this);
-	off.addActionListener(this);
 	trim.addActionListener(this);
         
-	pane.add(on);
-	pane.add(off);
-        bottom.add(trim);
+	pane.add(trim);
         this.setLayout(new BorderLayout());
- 	add(pane, BorderLayout.NORTH);
-        add(bottom, BorderLayout.SOUTH);
-        startTrim();
- }
+ 	add(pane);
+  }
 	
 public void actionPerformed(ActionEvent e) {
-    if ("on".equals(e.getActionCommand())) {
-        isOn = true;
-	on.setEnabled(false);
-        off.setEnabled(true);
-        startTrim();
-    } else if ("off".equals(e.getActionCommand())) {
-        isOn = false;
-	on.setEnabled(true);
-        off.setEnabled(false);
-        startTrim();
-    }else { 
+    if ("trim".equals(e.getActionCommand())) {
         trimAttempt();
     }
 } 
 	
  
- 	public void startTrim() {
-		Thread startThread = new Thread() {
-			public void run() {
-				while (isOn) {
-					//perhaps the solution (XRDS problem) is simply to move the trimAttempt to after the .sleep
-					try {
-						Thread.sleep(1000/refreshRate);
-					}catch (InterruptedException e) {
-						System.out.println("An error occured in startTrim");
-						//maybe something like:
-						// restart = on;
-						// restartThread();
-					}
-					trimAttempt();
-				}
-			
-			}
-		}; 
-		startThread.start();
-	}
 
 
 private void trimAttempt(){
@@ -121,11 +73,3 @@ private void trimAttempt(){
         } 
  }
 }
-/*
-* private void restartThread(){
-*  thread restart = newthread { etc...
-*  sleep first then call other thread
-*  }
-*} 
-}
-*/
