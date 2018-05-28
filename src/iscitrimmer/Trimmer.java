@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Trimmer extends JPanel implements ActionListener{
- // changing below to false until determining problem with xrds
  JButton trim;
  
  public Trimmer (){
@@ -20,7 +19,6 @@ public class Trimmer extends JPanel implements ActionListener{
          trim = new JButton("Trim");
 	 trim.setActionCommand("trim");
 	
-	 //flip the two below for now so it starts in off position
 	trim.addActionListener(this);
         
 	pane.add(trim);
@@ -38,7 +36,6 @@ public void actionPerformed(ActionEvent e) {
 
 
 private void trimAttempt(){
-    // can move Transferable initailization back to above try statement 
         try {    
         Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
 		if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) {
@@ -69,7 +66,6 @@ private void trimAttempt(){
                 } 
             } catch (Exception e) {
                 System.out.println("Problem occured in trimAttempt");
-		// popup window displaying "Failure in string manipulation"?
         } 
  }
 }
