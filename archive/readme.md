@@ -8,9 +8,9 @@ Moving threaded version to archive folder for now, updating to use button based 
 
 **V1.112 Complete**
 
-Current Build Notes:
+Previous Build Notes V1.112:
 
-Despite lowering refresh rate to 3x per second, and making sure the process runs after refreshing, there is still a high likelyhood of xrds interfering with pasting. Using the trim feature is the way to go for now.
+Despite lowering refresh rate to 3x per second, and making sure the process runs after refreshing, there is still a high likelyhood of xrds interfering with pasting. Unable to get messages from cmd console when launching from windows cmd prompt. Not sure if there is anything that will stop xrds from locking up while running trimmer thread.
 
 
 Previous Build Notes:
